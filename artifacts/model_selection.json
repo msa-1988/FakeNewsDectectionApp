@@ -1,0 +1,29 @@
+[
+  {
+    "model": "linear_svc",
+    "cv_accuracy_mean": 0.96166,
+    "cv_accuracy_std": 0.001748,
+    "cv_f1_macro_mean": 0.961654,
+    "cv_f1_macro_std": 0.001748,
+    "cv_precision_macro_mean": 0.961664,
+    "cv_recall_macro_mean": 0.961655
+  },
+  {
+    "model": "logistic_regression",
+    "cv_accuracy_mean": 0.955504,
+    "cv_accuracy_std": 0.001662,
+    "cv_f1_macro_mean": 0.955497,
+    "cv_f1_macro_std": 0.001662,
+    "cv_precision_macro_mean": 0.955497,
+    "cv_recall_macro_mean": 0.955501
+  },
+  {
+    "model": "complement_nb",
+    "cv_accuracy_mean": 0.918079,
+    "cv_accuracy_std": 0.00254,
+    "cv_f1_macro_mean": 0.917716,
+    "cv_f1_macro_std": 0.002579,
+    "cv_precision_macro_mean": 0.923376,
+    "cv_recall_macro_mean": 0.917377
+  }
+]

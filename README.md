@@ -1,34 +1,104 @@
+# Fake News Detection Studio
 
-# Fake News Detection App
+A production-style fake-news screening application built with `scikit-learn` and `Streamlit`. The project upgrades a simple text classifier into a more complete ML product with structured preprocessing, cross-validated model selection, holdout evaluation artifacts, explainable signals, and batch scoring.
 
-Welcome to the Fake News Detection App! This is a web application built to detect fake news using a machine learning algorithm. It has been trained on a dataset and tested to achieve more than 99% accuracy.
+## What This Version Adds
 
-## Application Link
-You can check out the Fake News Detection App by clicking [here](https://msa-1988-fakenewsdectectionapp-fakennewsapp-fum9cl.streamlit.app/).
+- Separate TF-IDF feature spaces for headlines and article bodies
+- Cross-validated model benchmarking across `LinearSVC`, `LogisticRegression`, and `ComplementNB`
+- Leakage-aware preprocessing that removes noisy source and timestamp artifacts
+- Holdout validation metrics, confusion matrix, top lexical signals, and sample articles
+- Token-level explanation panels for individual predictions
+- Batch CSV screening with downloadable results
+- Deployment-ready Streamlit entrypoint
+- Cleaner project structure for retraining, inference, and deployment
 
-## Usage
-1. Enter a news article in the provided text area.
-2. Click the "Detect" button to perform the prediction.
-3. The app will display whether the news article is predicted to be fake or not.
+## Validation Snapshot
 
-Please note that this application is developed as an attempt to showcase an end-to-end machine learning project. It is not intended for commercial use. Use the application at your own risk, and we are not responsible for any legal implications.
+Current trained artifact on `data/raw/News.csv`:
 
-## Installation
-To run the Fake News Detection App locally, follow these steps:
-1. Clone this repository to your local machine.
-2. Install the required dependencies by running the following command:
+- Holdout accuracy: `0.968`
+- Holdout macro F1: `0.968`
+- Holdout macro precision: `0.968`
+- Holdout ROC-AUC: `0.996`
+- Holdout rows: `4102`
+- Best model: `linear_svc`
+
+Cross-validation leaderboard on the training split:
+
+| Model | CV Accuracy | CV Macro F1 |
+| --- | ---: | ---: |
+| `linear_svc` | `0.962` | `0.962` |
+| `logistic_regression` | `0.956` | `0.955` |
+| `complement_nb` | `0.918` | `0.918` |
+
+Holdout confusion matrix:
+
+| Actual \ Predicted | Likely real | Likely fake |
+| --- | ---: | ---: |
+| `Likely real` | `2006` | `72` |
+| `Likely fake` | `60` | `1964` |
+
+## Product Workflows
+
+### 1. Single-article analysis
+
+- Paste a headline and article body
+- Review the model verdict, margin-based confidence, and token-level signals
+- Load curated examples from the holdout set to inspect behavior quickly
+
+### 2. Batch screening
+
+- Upload a CSV with `title` plus either `body` or `text`
+- Score multiple rows in one pass
+- Download the enriched CSV with predictions, confidence, and decision scores
+
+## Local Run
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-
-
-3. Run the application using the following command:
 streamlit run FakenNewsApp.py
+```
 
+Or use the helper script:
 
-4. The application will open in your web browser, and you can start using it.
+```bash
+./scripts/run_local.sh
+```
 
-Feel free to explore the code and make any modifications or improvements you desire.
+## Retraining
 
-## Feedback and Contributions
-I welcome any feedback or contributions to enhance the Fake News Detection App. If you have any suggestions, bug reports, or feature requests, please feel free to open an issue or submit a pull request.
+```bash
+python scripts/train_model.py
+python scripts/smoke_test.py
+```
 
-I hope you find this application useful and insightful in detecting fake news!
+Training writes the app artifacts to `artifacts/`:
+
+- `fake_news_detector.joblib`
+- `validation_metrics.json`
+- `model_selection.json`
+- `confusion_matrix.json`
+- `top_terms.json`
+- `sample_articles.json`
+
+## Project Layout
+
+```text
+.
+├── artifacts/               # trained model bundle and validation outputs
+├── data/raw/News.csv        # training dataset
+├── notebooks/               # exploration notebook
+├── scripts/                 # training and smoke-test helpers
+├── src/                     # preprocessing, modeling, inference, UI
+├── FakenNewsApp.py          # Streamlit entrypoint
+└── requirements.txt
+```
+
+## Notes
+
+- This system is a text-pattern classifier, not a factual verification engine.
+- The confidence indicator is derived from model margin, not a calibrated probability of truth.
+- The app is best used for screening, prioritization, and demonstration of applied ML workflow.

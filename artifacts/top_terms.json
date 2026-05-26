@@ -1,0 +1,166 @@
+{
+  "fake_signals": [
+    {
+      "feature": "body: anti",
+      "weight": 3.6273143667518624
+    },
+    {
+      "feature": "body: year old",
+      "weight": 3.0242478878686967
+    },
+    {
+      "feature": "body: non",
+      "weight": 2.97847834716806
+    },
+    {
+      "feature": "body: self",
+      "weight": 2.474198579708872
+    },
+    {
+      "feature": "body: hillary",
+      "weight": 2.130551954972201
+    },
+    {
+      "feature": "body: president elect",
+      "weight": 2.075032953988706
+    },
+    {
+      "feature": "body: al",
+      "weight": 1.9479190316036041
+    },
+    {
+      "feature": "body: snip",
+      "weight": 1.9466457561055917
+    },
+    {
+      "feature": "body: oct",
+      "weight": 1.8235677794776004
+    },
+    {
+      "feature": "body: elect",
+      "weight": 1.8157248321841672
+    },
+    {
+      "feature": "title: comment",
+      "weight": 1.8017720498997596
+    },
+    {
+      "feature": "body: pic com",
+      "weight": 1.7472077075095616
+    },
+    {
+      "feature": "body: print",
+      "weight": 1.643110325092915
+    },
+    {
+      "feature": "body: mid",
+      "weight": 1.557034258604567
+    },
+    {
+      "feature": "body: clinton",
+      "weight": 1.5118064168292347
+    },
+    {
+      "feature": "body: old",
+      "weight": 1.455630870053349
+    },
+    {
+      "feature": "body: 11",
+      "weight": 1.4042684953068598
+    },
+    {
+      "feature": "body: pro",
+      "weight": 1.3762986329636977
+    },
+    {
+      "feature": "body: article",
+      "weight": 1.317042886102567
+    },
+    {
+      "feature": "body: pre",
+      "weight": 1.3136520911140193
+    }
+  ],
+  "real_signals": [
+    {
+      "feature": "body: mr",
+      "weight": -5.181705680536262
+    },
+    {
+      "feature": "body: said",
+      "weight": -4.68514109510742
+    },
+    {
+      "feature": "body: follow",
+      "weight": -4.02498999473318
+    },
+    {
+      "feature": "body: president donald",
+      "weight": -3.4835644537292763
+    },
+    {
+      "feature": "body: breitbart",
+      "weight": -3.3919272699204157
+    },
+    {
+      "feature": "body: ms",
+      "weight": -3.0723768274239607
+    },
+    {
+      "feature": "body: president trump",
+      "weight": -2.6317530624514345
+    },
+    {
+      "feature": "body: president",
+      "weight": -2.138068221593401
+    },
+    {
+      "feature": "body: pic",
+      "weight": -2.0649512761288817
+    },
+    {
+      "feature": "title: delingpole",
+      "weight": -2.0285008897278227
+    },
+    {
+      "feature": "body: breitbart news",
+      "weight": -2.0235753039390314
+    },
+    {
+      "feature": "body: sunday",
+      "weight": -1.9310718534571503
+    },
+    {
+      "feature": "body: percent",
+      "weight": -1.817969422465481
+    },
+    {
+      "feature": "body: friday",
+      "weight": -1.7512694139295926
+    },
+    {
+      "feature": "body: dr",
+      "weight": -1.6951197198891048
+    },
+    {
+      "feature": "body: ap",
+      "weight": -1.6663714308615498
+    },
+    {
+      "feature": "body: saturday",
+      "weight": -1.6369930579148453
+    },
+    {
+      "feature": "body: added",
+      "weight": -1.4873977607190056
+    },
+    {
+      "feature": "body: thursday",
+      "weight": -1.4457872838392631
+    },
+    {
+      "feature": "body: wrote",
+      "weight": -1.4293410059254381
+    }
+  ]
+}

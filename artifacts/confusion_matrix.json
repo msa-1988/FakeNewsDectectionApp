@@ -1,0 +1,16 @@
+{
+  "labels": [
+    "Likely real",
+    "Likely fake"
+  ],
+  "matrix": [
+    [
+      2006,
+      72
+    ],
+    [
+      60,
+      1964
+    ]
+  ]
+}
