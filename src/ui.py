@@ -227,7 +227,7 @@ def render_validation_tab(payload: dict) -> None:
 
     st.markdown("#### Model selection")
     if selection:
-        st.dataframe(selection, use_container_width=True, hide_index=True)
+        st.dataframe(selection, width="stretch", hide_index=True)
 
     st.markdown("#### Confusion matrix")
     if confusion:
@@ -240,7 +240,7 @@ def render_validation_tab(payload: dict) -> None:
                     labels[0]: [row[0] for row in matrix],
                     labels[1]: [row[1] for row in matrix],
                 },
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )
 
@@ -266,7 +266,7 @@ def render_model_card_tab(payload: dict, metadata: dict) -> None:
                         "Rows": list(class_balance.values()),
                     }
                 ),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )
         st.markdown("#### Feature families")
@@ -333,13 +333,13 @@ Example headline,Example article body...</pre>
         for column in ["title", "predicted_label", "confidence", "decision_score"]
         if column in results.columns
     ]
-    st.dataframe(results[preview_columns], use_container_width=True, hide_index=True)
+    st.dataframe(results[preview_columns], width="stretch", hide_index=True)
     st.download_button(
         "Download scored CSV",
         data=results.to_csv(index=False).encode("utf-8"),
         file_name="fake-news-screening-results.csv",
         mime="text/csv",
-        use_container_width=True,
+        width="stretch",
     )
 
 
@@ -375,7 +375,7 @@ def main() -> None:
                 height=280,
                 placeholder="Paste the article body here...",
             )
-            analyze = st.button("Analyze article", type="primary", use_container_width=True)
+            analyze = st.button("Analyze article", type="primary", width="stretch")
             st.markdown("</div>", unsafe_allow_html=True)
 
             if analyze:
