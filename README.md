@@ -2,6 +2,36 @@
 
 A production-style fake-news screening application built with `scikit-learn` and `Streamlit`. The project upgrades a simple text classifier into a more complete ML product with structured preprocessing, cross-validated model selection, holdout evaluation artifacts, explainable signals, and batch scoring.
 
+## Interface Preview
+
+### Hero and product overview
+
+![Hero section](screenshots/hero-section.png)
+
+### Single-article analysis
+
+Use the main workflow to screen a headline and article body, inspect the model verdict, and review token-level evidence pushing the classifier toward either class.
+
+![Single article analysis](screenshots/single-article-analysis.png)
+
+### Batch screening
+
+Upload a CSV containing `title` plus either `body` or `text`, score the full batch, and export the enriched results.
+
+![Batch screening](screenshots/batch-screening.png)
+
+### Validation view
+
+The app exposes model metrics, a comparison table for candidate models, and the holdout confusion matrix directly in the UI.
+
+![Validation tab](screenshots/validation-tab.png)
+
+### Model card
+
+The model card summarizes the training setup, class balance, and the strongest global lexical signals for both classes.
+
+![Model card tab](screenshots/model-card-tab.png)
+
 ## What This Version Adds
 
 - Separate TF-IDF feature spaces for headlines and article bodies
